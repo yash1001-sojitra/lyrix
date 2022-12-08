@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lyrix/Screen/lyrixscreen.dart';
 
 import 'drawer.dart';
 
@@ -94,7 +95,14 @@ class _HomescreenState extends State<Homescreen> {
                   itemCount: 50,
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
-                    return LyrixViewModel();
+                    return GestureDetector(
+                        onTap: (() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LyrixScreen()));
+                        }),
+                        child: const LyrixViewModel());
                   }),
             ),
           ],
@@ -111,72 +119,14 @@ class LyrixViewModel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: 20, left: 20, top: 20),
-      height: 100,
-      child: Stack(children: [
-        Positioned.fill(
-          child: Container(
-              decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Colors.white),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Container()),
+      child: const Card(
+        child: ListTile(
+          leading: Icon(Icons.library_music_outlined),
+          title: Text("music title"),
+          trailing: Text("music "),
+          subtitle: Text("music subtitle"),
         ),
-        Positioned(
-          bottom: 0,
-          left: 0,
-          right: 0,
-          child: Container(
-            height: 190,
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10)),
-              gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: [Colors.black.withOpacity(0.2), Colors.black54]),
-            ),
-          ),
-        ),
-        Positioned(
-          bottom: 0,
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Container(
-              color: Colors.amber,
-              width: MediaQuery.of(context).size.width * 0.80,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        "gsfgsdf",
-                        style: const TextStyle(
-                            overflow: TextOverflow.ellipsis,
-                            color: Colors.white60,
-                            fontSize: 18),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        "16161",
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 30),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    "161616",
-                    style: const TextStyle(color: Colors.white60, fontSize: 18),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ]),
+      ),
     );
   }
 }
