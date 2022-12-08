@@ -41,60 +41,86 @@ class _LyrixScreenState extends State<LyrixScreen> {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    'Name',
-                    style: TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    "Song details",
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Artist',
-                    style: TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    "Artist name",
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Album Name',
-                    style: TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    "Album Name",
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Explicit',
-                    style: TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    "Explicit",
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Rating',
-                    style: TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    "Rating",
+                children: [
+                  Card(
+                    shadowColor: Colors.black,
+                    color: Colors.grey[200],
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 12.0, top: 10, bottom: 10),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Name',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600, fontSize: 20),
+                              ),
+                              Text(
+                                "Song details",
+                                style: TextStyle(color: Colors.pinkAccent),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Artist',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600, fontSize: 20),
+                              ),
+                              Text(
+                                "Artist name",
+                                style: TextStyle(color: Colors.pinkAccent),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Album Name',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600, fontSize: 20),
+                              ),
+                              Text(
+                                "Album Name",
+                                style: TextStyle(color: Colors.pinkAccent),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Explicit',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600, fontSize: 20),
+                              ),
+                              Text(
+                                "Explicit",
+                                style: TextStyle(color: Colors.pinkAccent),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Rating',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600, fontSize: 20),
+                              ),
+                              Text(
+                                "Rating",
+                                style: TextStyle(color: Colors.pinkAccent),
+                              ),
+                            ]),
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     'Lyrics',
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
                   ),
                 ],
               )

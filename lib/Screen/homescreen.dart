@@ -121,10 +121,17 @@ class LyrixViewModel extends StatelessWidget {
       margin: const EdgeInsets.only(right: 20, left: 20, top: 20),
       child: const Card(
         child: ListTile(
-          leading: Icon(Icons.library_music_outlined),
+          leading: Icon(
+            Icons.music_note,
+            size: 30,
+            color: Colors.pink,
+          ),
           title: Text("music title"),
-          trailing: Text("music "),
-          subtitle: Text("music subtitle"),
+          trailing: Text("music"),
+          subtitle: Text(
+            "music subtitle",
+            style: TextStyle(color: Colors.pinkAccent),
+          ),
         ),
       ),
     );
