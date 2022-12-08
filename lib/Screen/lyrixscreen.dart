@@ -53,7 +53,7 @@ class _LyrixScreenState extends State<LyrixScreen> {
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                            children: const [
                               Text(
                                 'Name',
                                 style: TextStyle(
@@ -115,10 +115,10 @@ class _LyrixScreenState extends State<LyrixScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     'Lyrics',
                     style: TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
                   ),

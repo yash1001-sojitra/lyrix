@@ -16,14 +16,27 @@ class Drawerbtn extends StatelessWidget {
         child: Column(
           children: <Widget>[
             SizedBox(
-                height: 100,
+                height: 130,
                 child: DrawerHeader(
+                  decoration: const BoxDecoration(color: Colors.white),
                   child: SizedBox(
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
-                    child: const Text(
-                      "Lyrix",
-                      style: TextStyle(fontSize: 30, color: Colors.white),
+                    child: Row(
+                      children: const [
+                        Icon(
+                          Icons.music_note,
+                          size: 50,
+                          color: Colors.pink,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          "Lyrix",
+                          style: TextStyle(fontSize: 30, color: Colors.black),
+                        ),
+                      ],
                     ),
                   ),
                 )),
@@ -52,23 +65,29 @@ class Drawerbtn extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Material(
-              borderRadius: BorderRadius.circular(500),
-              child: InkWell(
-                borderRadius: BorderRadius.circular(500),
-                splashColor: Colors.black45,
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-                child: const CircleAvatar(
-                  radius: 30,
-                  backgroundColor: Colors.black,
-                  child: Icon(Icons.arrow_back, color: Colors.white),
-                ),
+            const Divider(
+              color: Colors.white24,
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: Text(
+                'Setting',
+                style: GoogleFonts.playfairDisplay(
+                    textStyle: style,
+                    letterSpacing: 3,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700),
+                textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 30,
+            ),
+            const Divider(
+              color: Colors.white24,
             ),
             Expanded(
                 child: Align(
