@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:lyrix/Route/string.dart';
+import 'package:lyrix/core/Constant/string.dart';
 import 'package:lyrix/Screen/HomeScreen.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case homeScreenRoute:
-        return MaterialPageRoute(builder: (_) => Homescreen());
+        return MaterialPageRoute(builder: (_) => const Homescreen());
 
       default:
         return MaterialPageRoute(

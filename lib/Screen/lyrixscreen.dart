@@ -13,6 +13,7 @@ class _LyrixScreenState extends State<LyrixScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: const Color(0xff1a1a1a),
         appBar: AppBar(
           automaticallyImplyLeading: false,
           elevation: 0,
@@ -44,7 +45,7 @@ class _LyrixScreenState extends State<LyrixScreen> {
                 children: [
                   Card(
                     shadowColor: Colors.black,
-                    color: Colors.grey[200],
+                    color: Colors.white,
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: Padding(
@@ -120,7 +121,10 @@ class _LyrixScreenState extends State<LyrixScreen> {
                   ),
                   const Text(
                     'Lyrics',
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 25,
+                        color: Colors.white),
                   ),
                 ],
               )
