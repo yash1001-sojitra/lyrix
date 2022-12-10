@@ -312,12 +312,12 @@ class MusicGenre {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['music_genre_id'] = this.musicGenreId;
-    data['music_genre_parent_id'] = this.musicGenreParentId;
-    data['music_genre_name'] = this.musicGenreName;
-    data['music_genre_name_extended'] = this.musicGenreNameExtended;
-    data['music_genre_vanity'] = this.musicGenreVanity;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['music_genre_id'] = musicGenreId;
+    data['music_genre_parent_id'] = musicGenreParentId;
+    data['music_genre_name'] = musicGenreName;
+    data['music_genre_name_extended'] = musicGenreNameExtended;
+    data['music_genre_vanity'] = musicGenreVanity;
     return data;
   }
 }
