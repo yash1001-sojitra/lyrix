@@ -1,9 +1,9 @@
-class song {
+class Song {
   Message? message;
 
-  song({this.message});
+  Song({this.message});
 
-  song.fromJson(Map<String, dynamic> json) {
+  Song.fromJson(Map<String, dynamic> json) {
     message =
         json['message'] != null ?  Message.fromJson(json['message']) : null;
   }

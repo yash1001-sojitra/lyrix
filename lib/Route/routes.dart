@@ -1,12 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lyrix/Screen/homescreen.dart';
 import 'package:lyrix/core/Constant/string.dart';
-import 'package:lyrix/Screen/HomeScreen.dart';
+import 'package:lyrix/data/data_provider.dart';
+import 'package:lyrix/data/dio/dio.dart';
+import 'package:lyrix/logic/cubit/cubit/musix_cubit.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case homeScreenRoute:
-        return MaterialPageRoute(builder: (_) => const Homescreen());
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => MusixCubit(
+                  dataProvider: DataProvider(
+                    dioClient: DioClient(),
+                  ),
+                ),
+              ),
+            ],
+            child: Homescreen(),
+          ),
+        );
 
       default:
         return MaterialPageRoute(

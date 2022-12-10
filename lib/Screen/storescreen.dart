@@ -36,9 +36,7 @@ class _StoreScreenState extends State<StoreScreen> {
       ),
       body: Card(
         color: Colors.white,
-        child: Container(
-          child: Center(child: Lottie.asset('assets/json/nodata.json')),
-        ),
+        child: Center(child: Lottie.asset('assets/json/nodata.json')),
       ),
     );
   }

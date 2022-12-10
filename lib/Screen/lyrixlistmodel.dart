@@ -12,7 +12,7 @@ class _LyrixListmodelState extends State<LyrixListmodel> {
   Widget build(BuildContext context) {
     return ListView.builder(
         itemCount: 10,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
           return Container(
             height: 50,
