@@ -4,8 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 
-part 'event.dart';
-part 'state.dart';
+part 'connectivity_event.dart';
+part 'connectivity_state.dart';
 
 class ConnectedBloc extends Bloc<ConnectedEvent, ConnectedState> {
   StreamSubscription? subscription;

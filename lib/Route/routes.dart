@@ -4,7 +4,8 @@ import 'package:lyrix/Screen/homescreen.dart';
 import 'package:lyrix/core/Constant/string.dart';
 import 'package:lyrix/data/data_provider.dart';
 import 'package:lyrix/data/dio/dio.dart';
-import 'package:lyrix/logic/cubit/cubit/musix_cubit.dart';
+
+import '../logic/cubit/musix_cubit/musix_cubit.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {

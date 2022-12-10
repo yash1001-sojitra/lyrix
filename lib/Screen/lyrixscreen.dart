@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:lyrix/logic/bloc/bloc.dart';
-import 'package:lyrix/logic/cubit/cubit/lyrix_cubit.dart';
-import 'package:lyrix/logic/cubit/cubit/musix_cubit.dart';
+
+import '../logic/connectivity_bloc/connectivity_bloc.dart';
+import '../logic/cubit/lyrix_cubit/lyrix_cubit.dart';
+import '../logic/cubit/musix_cubit/musix_cubit.dart';
 
 class LyrixScreen extends StatelessWidget {
   final String trackId;
