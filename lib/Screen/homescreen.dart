@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lyrix/Screen/lyrixscreen.dart';
+import 'package:lyrix/logic/bloc/bloc.dart';
 
 import 'drawer.dart';
 
@@ -15,6 +16,7 @@ class Homescreen extends StatefulWidget {
 
 class _HomescreenState extends State<Homescreen> {
   final style = const TextStyle(fontSize: 20);
+  final ConnectedBloc isconnected = ConnectedBloc();
 
   @override
   Widget build(BuildContext context) {
