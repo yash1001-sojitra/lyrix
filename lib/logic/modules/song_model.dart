@@ -5,13 +5,13 @@ class song {
 
   song.fromJson(Map<String, dynamic> json) {
     message =
-        json['message'] != null ? new Message.fromJson(json['message']) : null;
+        json['message'] != null ?  Message.fromJson(json['message']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.message != null) {
-      data['message'] = this.message!.toJson();
+    final Map<String, dynamic> data =  <String, dynamic>{};
+    if (message != null) {
+      data['message'] = message!.toJson();
     }
     return data;
   }
@@ -25,17 +25,17 @@ class Message {
 
   Message.fromJson(Map<String, dynamic> json) {
     header =
-        json['header'] != null ? new Header.fromJson(json['header']) : null;
-    body = json['body'] != null ? new Body.fromJson(json['body']) : null;
+        json['header'] != null ?  Header.fromJson(json['header']) : null;
+    body = json['body'] != null ?  Body.fromJson(json['body']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.header != null) {
-      data['header'] = this.header!.toJson();
+    final Map<String, dynamic> data =  <String, dynamic>{};
+    if (header != null) {
+      data['header'] = header!.toJson();
     }
-    if (this.body != null) {
-      data['body'] = this.body!.toJson();
+    if (body != null) {
+      data['body'] = body!.toJson();
     }
     return data;
   }
@@ -53,9 +53,9 @@ class Header {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status_code'] = this.statusCode;
-    data['execute_time'] = this.executeTime;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['status_code'] = statusCode;
+    data['execute_time'] = executeTime;
     return data;
   }
 }
@@ -69,15 +69,15 @@ class Body {
     if (json['track_list'] != null) {
       trackList = <TrackList>[];
       json['track_list'].forEach((v) {
-        trackList!.add(new TrackList.fromJson(v));
+        trackList!.add( TrackList.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.trackList != null) {
-      data['track_list'] = this.trackList!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (trackList != null) {
+      data['track_list'] = trackList!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -89,13 +89,13 @@ class TrackList {
   TrackList({this.track});
 
   TrackList.fromJson(Map<String, dynamic> json) {
-    track = json['track'] != null ? new Track.fromJson(json['track']) : null;
+    track = json['track'] != null ?  Track.fromJson(json['track']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.track != null) {
-      data['track'] = this.track!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (track != null) {
+      data['track'] = track!.toJson();
     }
     return data;
   }
@@ -151,7 +151,7 @@ class Track {
     if (json['track_name_translation_list'] != null) {
       trackNameTranslationList = <TrackNameTranslationList>[];
       json['track_name_translation_list'].forEach((v) {
-        trackNameTranslationList!.add(new TrackNameTranslationList.fromJson(v));
+        trackNameTranslationList!.add(TrackNameTranslationList.fromJson(v));
       });
     }
     trackRating = json['track_rating'];
@@ -171,36 +171,36 @@ class Track {
     restricted = json['restricted'];
     updatedTime = json['updated_time'];
     primaryGenres = json['primary_genres'] != null
-        ? new PrimaryGenres.fromJson(json['primary_genres'])
+        ? PrimaryGenres.fromJson(json['primary_genres'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['track_id'] = this.trackId;
-    data['track_name'] = this.trackName;
-    if (this.trackNameTranslationList != null) {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['track_id'] = trackId;
+    data['track_name'] = trackName;
+    if (trackNameTranslationList != null) {
       data['track_name_translation_list'] =
-          this.trackNameTranslationList!.map((v) => v.toJson()).toList();
+          trackNameTranslationList!.map((v) => v.toJson()).toList();
     }
-    data['track_rating'] = this.trackRating;
-    data['commontrack_id'] = this.commontrackId;
-    data['instrumental'] = this.instrumental;
-    data['explicit'] = this.explicit;
-    data['has_lyrics'] = this.hasLyrics;
-    data['has_subtitles'] = this.hasSubtitles;
-    data['has_richsync'] = this.hasRichsync;
-    data['num_favourite'] = this.numFavourite;
-    data['album_id'] = this.albumId;
-    data['album_name'] = this.albumName;
-    data['artist_id'] = this.artistId;
-    data['artist_name'] = this.artistName;
-    data['track_share_url'] = this.trackShareUrl;
-    data['track_edit_url'] = this.trackEditUrl;
-    data['restricted'] = this.restricted;
-    data['updated_time'] = this.updatedTime;
-    if (this.primaryGenres != null) {
-      data['primary_genres'] = this.primaryGenres!.toJson();
+    data['track_rating'] = trackRating;
+    data['commontrack_id'] = commontrackId;
+    data['instrumental'] = instrumental;
+    data['explicit'] = explicit;
+    data['has_lyrics'] = hasLyrics;
+    data['has_subtitles'] = hasSubtitles;
+    data['has_richsync'] = hasRichsync;
+    data['num_favourite'] = numFavourite;
+    data['album_id'] = albumId;
+    data['album_name'] = albumName;
+    data['artist_id'] = artistId;
+    data['artist_name'] = artistName;
+    data['track_share_url'] = trackShareUrl;
+    data['track_edit_url'] = trackEditUrl;
+    data['restricted'] = restricted;
+    data['updated_time'] = updatedTime;
+    if (primaryGenres != null) {
+      data['primary_genres'] = primaryGenres!.toJson();
     }
     return data;
   }
@@ -213,14 +213,14 @@ class TrackNameTranslationList {
 
   TrackNameTranslationList.fromJson(Map<String, dynamic> json) {
     trackNameTranslation = json['track_name_translation'] != null
-        ? new TrackNameTranslation.fromJson(json['track_name_translation'])
+        ? TrackNameTranslation.fromJson(json['track_name_translation'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.trackNameTranslation != null) {
-      data['track_name_translation'] = this.trackNameTranslation!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (trackNameTranslation != null) {
+      data['track_name_translation'] = trackNameTranslation!.toJson();
     }
     return data;
   }
@@ -238,9 +238,9 @@ class TrackNameTranslation {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['language'] = this.language;
-    data['translation'] = this.translation;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['language'] = language;
+    data['translation'] = translation;
     return data;
   }
 }
@@ -254,16 +254,16 @@ class PrimaryGenres {
     if (json['music_genre_list'] != null) {
       musicGenreList = <MusicGenreList>[];
       json['music_genre_list'].forEach((v) {
-        musicGenreList!.add(new MusicGenreList.fromJson(v));
+        musicGenreList!.add(MusicGenreList.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.musicGenreList != null) {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (musicGenreList != null) {
       data['music_genre_list'] =
-          this.musicGenreList!.map((v) => v.toJson()).toList();
+          musicGenreList!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -276,14 +276,14 @@ class MusicGenreList {
 
   MusicGenreList.fromJson(Map<String, dynamic> json) {
     musicGenre = json['music_genre'] != null
-        ? new MusicGenre.fromJson(json['music_genre'])
+        ? MusicGenre.fromJson(json['music_genre'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.musicGenre != null) {
-      data['music_genre'] = this.musicGenre!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (musicGenre != null) {
+      data['music_genre'] = musicGenre!.toJson();
     }
     return data;
   }

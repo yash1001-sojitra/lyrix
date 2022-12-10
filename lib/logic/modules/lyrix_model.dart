@@ -1,111 +1,119 @@
 class SongLyrics {
-    Message? message;
+  Message? message;
 
-    SongLyrics({this.message});
+  SongLyrics({this.message});
 
-    SongLyrics.fromJson(Map<String, dynamic> json) {
-        message = json["message"] == null ? null : Message.fromJson(json["message"]);
+  SongLyrics.fromJson(Map<String, dynamic> json) {
+    message =
+        json["message"] == null ? null : Message.fromJson(json["message"]);
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (message != null) {
+      data["message"] = message?.toJson();
     }
-
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = <String, dynamic>{};
-        if(message != null) {
-          data["message"] = message?.toJson();
-        }
-        return data;
-    }
+    return data;
+  }
 }
 
 class Message {
-    Header? header;
-    Body? body;
+  Header? header;
+  Body? body;
 
-    Message({this.header, this.body});
+  Message({this.header, this.body});
 
-    Message.fromJson(Map<String, dynamic> json) {
-        header = json["header"] == null ? null : Header.fromJson(json["header"]);
-        body = json["body"] == null ? null : Body.fromJson(json["body"]);
+  Message.fromJson(Map<String, dynamic> json) {
+    header = json["header"] == null ? null : Header.fromJson(json["header"]);
+    body = json["body"] == null ? null : Body.fromJson(json["body"]);
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (header != null) {
+      data["header"] = header?.toJson();
     }
-
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = <String, dynamic>{};
-        if(header != null) {
-          data["header"] = header?.toJson();
-        }
-        if(body != null) {
-          data["body"] = body?.toJson();
-        }
-        return data;
+    if (body != null) {
+      data["body"] = body?.toJson();
     }
+    return data;
+  }
 }
 
 class Body {
-    Lyrics? lyrics;
+  Lyrics? lyrics;
 
-    Body({this.lyrics});
+  Body({this.lyrics});
 
-    Body.fromJson(Map<String, dynamic> json) {
-        lyrics = json["lyrics"] == null ? null : Lyrics.fromJson(json["lyrics"]);
+  Body.fromJson(Map<String, dynamic> json) {
+    lyrics = json["lyrics"] == null ? null : Lyrics.fromJson(json["lyrics"]);
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (lyrics != null) {
+      data["lyrics"] = lyrics?.toJson();
     }
-
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = <String, dynamic>{};
-        if(lyrics != null) {
-          data["lyrics"] = lyrics?.toJson();
-        }
-        return data;
-    }
+    return data;
+  }
 }
 
 class Lyrics {
-    int? lyricsId;
-    int? explicit;
-    String? lyricsBody;
-    String? scriptTrackingUrl;
-    String? pixelTrackingUrl;
-    String? lyricsCopyright;
-    String? updatedTime;
+  int? lyricsId;
+  int? explicit;
+  String? lyricsBody;
+  String? scriptTrackingUrl;
+  String? pixelTrackingUrl;
+  String? lyricsCopyright;
+  String? updatedTime;
 
-    Lyrics({this.lyricsId, this.explicit, this.lyricsBody, this.scriptTrackingUrl, this.pixelTrackingUrl, this.lyricsCopyright, this.updatedTime});
+  Lyrics(
+      {this.lyricsId,
+      this.explicit,
+      this.lyricsBody,
+      this.scriptTrackingUrl,
+      this.pixelTrackingUrl,
+      this.lyricsCopyright,
+      this.updatedTime});
 
-    Lyrics.fromJson(Map<String, dynamic> json) {
-        lyricsId = json["lyrics_id"];
-        explicit = json["explicit"];
-        lyricsBody = json["lyrics_body"];
-        scriptTrackingUrl = json["script_tracking_url"];
-        pixelTrackingUrl = json["pixel_tracking_url"];
-        lyricsCopyright = json["lyrics_copyright"];
-        updatedTime = json["updated_time"];
-    }
+  Lyrics.fromJson(Map<String, dynamic> json) {
+    lyricsId = json["lyrics_id"];
+    explicit = json["explicit"];
+    lyricsBody = json["lyrics_body"];
+    scriptTrackingUrl = json["script_tracking_url"];
+    pixelTrackingUrl = json["pixel_tracking_url"];
+    lyricsCopyright = json["lyrics_copyright"];
+    updatedTime = json["updated_time"];
+  }
 
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = <String, dynamic>{};
-        data["lyrics_id"] = lyricsId;
-        data["explicit"] = explicit;
-        data["lyrics_body"] = lyricsBody;
-        data["script_tracking_url"] = scriptTrackingUrl;
-        data["pixel_tracking_url"] = pixelTrackingUrl;
-        data["lyrics_copyright"] = lyricsCopyright;
-        data["updated_time"] = updatedTime;
-        return data;
-    }
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["lyrics_id"] = lyricsId;
+    data["explicit"] = explicit;
+    data["lyrics_body"] = lyricsBody;
+    data["script_tracking_url"] = scriptTrackingUrl;
+    data["pixel_tracking_url"] = pixelTrackingUrl;
+    data["lyrics_copyright"] = lyricsCopyright;
+    data["updated_time"] = updatedTime;
+    return data;
+  }
 }
 
 class Header {
-    int? statusCode;
-    double? executeTime;
+  int? statusCode;
+  double? executeTime;
 
-    Header({this.statusCode, this.executeTime});
+  Header({this.statusCode, this.executeTime});
 
-    Header.fromJson(Map<String, dynamic> json) {
-        statusCode = json["status_code"];
-        executeTime = json["execute_time"];
-    }
+  Header.fromJson(Map<String, dynamic> json) {
+    statusCode = json["status_code"];
+    executeTime = json["execute_time"];
+  }
 
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = <String, dynamic>{};
-        data["status_code"] = statusCode;
-        data["execute_time"] = executeTime;
-        return data;
-    }
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["status_code"] = statusCode;
+    data["execute_time"] = executeTime;
+    return data;
+  }
 }
